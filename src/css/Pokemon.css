@@ -1,0 +1,31 @@
+.Pantalla {
+    display: block;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+}
+.Imatgepok {
+    /* object-fit: fill; */
+    height: 50%;
+    width: 95%;
+}
+.nompok {
+    text-transform: capitalize;
+}
+.tipus {
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 0;
+    text-transform: capitalize;
+}
+.tipus_estil{
+    border: 1px solid #424242;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    height: 15%;
+    line-height: 14%;
+    width: 30%;
+    color: wheat;
+}
+

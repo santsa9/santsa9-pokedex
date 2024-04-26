@@ -1,0 +1,74 @@
+
+.Menu {
+    background-color: #f82020;
+}
+
+.Cap {
+background-color: #f82020;
+height: 0px;
+}
+
+.Negre {
+background-color: black;
+height: 100vh;
+margin-left: 8%;
+margin-right: 8%;
+}
+
+.gris1,
+.gris2 {
+height: 8%;
+width: 5%;
+background: gray;
+margin: 2%;
+position: absolute;
+right: 0%;
+border-radius: 15px 15px 10px 10px; 
+}
+
+.gris1 {
+top: 7%;
+}
+
+.gris2 {
+top: 16%;
+border-radius: 10px 10px 15px 15px; 
+}
+
+.red {
+height: 4%;
+width: 7%;
+background: red;
+margin: 7px;
+border-radius: 50%;
+position: absolute;
+left: 20%;
+bottom: 20%;
+}
+
+.verd {
+height: 10%;
+width: 17%;
+background: green;
+margin: 7px;
+border-color: black;
+border-radius: 50%;
+border-width: 8px;
+border-style: solid;
+position: absolute;
+right: 0%;
+bottom: 14%;
+}
+
+.Bola {
+height: 25%;
+background: url("../images/pokeball.png") center no-repeat;
+width: 45%;
+position: absolute;
+bottom: 0.5%;
+left: 0;
+right: 0;
+border-style: hidden;
+background-size: cover;
+margin: auto;
+}
