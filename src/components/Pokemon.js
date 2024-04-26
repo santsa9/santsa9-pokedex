@@ -25,9 +25,9 @@ function Pokemon(props) {
         <img className='Imatgepok'src={pokemonActiu?.sprites.front_default}/> 
         
         <div className='nompok'>
-          {pokemonActiu?.name} 
-          {pokemonActiu?.description}
-        </div>
+          {pokemonActiu?.name}  
+          {/*AAAAAAAAAAAAAAAAAAAA a la pokeapi buscar pokemon-species/1/ flavor txt */}
+        </div> 
         <div className='tipus'> 
           {/* <h1 className='tipus_estil'>{pokemonActiu?.types?.map((ti, index) => {
           return <h6 key={index}>{ti.type.name}</h6>;
