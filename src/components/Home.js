@@ -35,7 +35,6 @@ function Home({setIdPokemon}) {
           <img className='boleta'src={ball}/> 
           <div className="nombrenom">
               <span>{pokemonActiu?.name}</span> 
-              <h1>Prova</h1>
               {/* No{pokemonActiu?.id} */}
           </div>
 
