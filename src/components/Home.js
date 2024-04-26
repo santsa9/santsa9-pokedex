@@ -25,6 +25,10 @@ function Home({setIdPokemon}) {
     getPokemon();
 }, []);
 
+useEffect(() => {
+    setIdPokemon(pokemonActiu?.id);
+}, [pokemonActiu]);
+
   return (
     <div className="Pantalla">
       
@@ -41,8 +45,6 @@ function Home({setIdPokemon}) {
           </h2>
         </h1>
       </header>
-
-      
       <div className="partbaixa">
   {pokemons?.map((pokemon) => (
     <div className="botonet" key={pokemon.id}>  {/* Added key prop */}

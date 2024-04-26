@@ -12,11 +12,9 @@ function Pokemon(props) {
   const [pokemonActiu, setPokemonActiu] = useState(null);
 
   const { id } = useParams();
-
   useEffect(() => {
     const getPokemon = async () => {
         const { result } = await getElements("https://pokeapi.co/api/v2/pokemon/"+id);
-        
         setPokemonActiu(result)
     };
     getPokemon();
@@ -31,12 +29,12 @@ function Pokemon(props) {
           {pokemonActiu?.description}
         </div>
         <div className='tipus'> 
-          <h1 className='tipus_estil'>{pokemonActiu?.types?.map((ti, index) => {
+          {/* <h1 className='tipus_estil'>{pokemonActiu?.types?.map((ti, index) => {
           return <h6 key={index}>{ti.type.name}</h6>;
         })} 
-          </h1>
+          </h1> */}
         <div className='descripcio'>
-          {pokemonActiu?.flavor_text_entries}
+          {pokemonActiu?.flavor_text_entries?.map}
         </div >
                     {/* <h3 className="mesures">
               <div className="alcada">Height: {pokemonActiu?.height}0 cm</div>

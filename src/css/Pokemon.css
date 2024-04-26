@@ -11,22 +11,29 @@
 }
 .nompok {
     text-transform: capitalize;
+    font-size: 1.5em;
+    /* height: 21%; */
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 47%;
 }
 .tipus {
     display: flex;
     justify-content: space-between;
     margin: 6px 0;
     text-transform: capitalize;
+    bottom: 15%;
+    position: absolute;
+    width: 90%;
+    right: 0;
+    left: 0;
+    margin: auto;
 }
 .tipus_estil{
     border: 1px solid #424242;
     display: flex;
-    justify-content: space-between;
     text-align: center;
-    height: 15%;
-    line-height: 14%;
-    width: 30%;
-    color: wheat;
 }
 .descripcio{
     height: fit-content;
