@@ -42,7 +42,7 @@ background: red;
 margin: 7px;
 border-radius: 50%;
 position: absolute;
-left: 20%;
+left: 18%;
 bottom: 20%;
 }
 
@@ -60,6 +60,10 @@ right: 0%;
 bottom: 14%;
 }
 
+.bolagran{
+bottom: 5%;
+}
+
 .Bola {
 height: 25%;
 background: url("../images/pokeball.png") center no-repeat;
@@ -69,6 +73,7 @@ bottom: 0.5%;
 left: 0;
 right: 0;
 border-style: hidden;
-background-size: cover;
+background-size: contain;
 margin: auto;
+padding: 2%;
 }

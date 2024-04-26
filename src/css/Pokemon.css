@@ -28,4 +28,8 @@
     width: 30%;
     color: wheat;
 }
-
+.descripcio{
+    height: fit-content;
+    text-align: center;
+    width: 50%;
+}   
