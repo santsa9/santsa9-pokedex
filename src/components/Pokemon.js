@@ -45,24 +45,11 @@ function Pokemon(props) {
           No{pokemonActiu?.id} {pokemonActiu?.name}  
         </div> 
         <div className='tipus'> 
-          {/* <div className='tipus_estil'>
+          <div className='tipus_estil'>
             {pokemonActiu?.types?.map((ti, index) => {
-              return <span className='tip' key={index}>{ti.type.name}${css.color_type}</span>;
+              return <span className='tip' key={index}>{ti.type.name}</span>;
             })} 
-          </div> */}
-        <div className={div_type_color}>
-          {pokemonActiu?.types?.map((ti, index) => {
-            return (
-              <h6
-                key={index}
-                className={`color-${ti.type.name}  ${index.color_type} `}
-              >
-                {" "}
-                {ti.type.name}{" "}
-              </h6>
-            );
-          })}
-        </div>
+          </div>
         </div>
         <div className='dades'>  
         <h1 className='height'>Height: {pokemonActiu && formatWeight(pokemonActiu.height)} m</h1>
