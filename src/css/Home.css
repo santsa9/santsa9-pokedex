@@ -2,7 +2,6 @@
     color: black;
 }
 .Pantalla {
-    background: #60e01a;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -16,6 +15,7 @@
     z-index: 100;
     top: 1%;
     display: block;
+    background: url("../images/fonspoke.jpg");
 
 }
 .partdalt {
@@ -46,6 +46,18 @@
     align-items: center;
     justify-content: center;
     text-transform: capitalize;
+    text-transform: capitalize;
+    font-size: 1.5em;
+    position: absolute;
+    right: 0;
+    left: 0;
+    font-weight: bold;
+    /* top: 36%; */
+    border: 3px solid black;
+    border-radius: 13px;
+    max-width: 85%;
+    margin: auto;
+    background-color: azure;
 }
 .boleta {
     /* height: 53%; */
@@ -85,7 +97,7 @@
 }
 .nombrenom {
     height: 25%;
-    font-size: 20px;
+    font-size: 25px;
     margin: 1%;
     max-width: fit-content;
 }
@@ -112,7 +124,7 @@
     margin: auto;
     top: 51%;
     margin-top: 2%;
-    background: #eaef3a;
+    background: lightblue;
     right: 0;
     left: 0;
     margin: auto;

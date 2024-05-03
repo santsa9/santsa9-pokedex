@@ -16,8 +16,6 @@ function formatWeight(weight) {
   return weightString; // Return the weight string unchanged if it's not a single digit
 }
 
-
-
 function Pokemon(props) {
   
   const [pokemons, setPokemons] = useState(null);
@@ -37,40 +35,34 @@ function Pokemon(props) {
     getPokemon();
 }, );
 
-  return (
-    <div className="Pantalla">
-        <img className='Imatgepok'src={pokemonActiu?.sprites.front_default} /> 
-        
-        <div className='nompok'>
-          No{pokemonActiu?.id} {pokemonActiu?.name}  
-        </div> 
-        <div className='tipus'> 
-        <div className='tipus_estil'>
-  {pokemonActiu?.types?.map((ti, index) => {
-    const typeName = ti.type.name.toLowerCase(); // Ensure type name is lowercase
-
-    return (
-      <span
-        className={`tip color-${typeName}`} // Dynamic class assignment
-        key={index}
-      >
-        {ti.type.name}
-      </span>
-    );
-  })}
-</div>
-
-        </div>
-        <div className='dades'>  
-        <h1 className='height'>Height: {pokemonActiu && formatWeight(pokemonActiu.height)} m</h1>
-        <h2 className='weight'>Weight: {pokemonActiu && formatWeight(pokemonActiu.weight)} kg</h2>    
-        </div>  
-        <div className='descr'>
-          <h3 className='inf'>{pokemonSpecies?.flavor_text_entries[8]?.flavor_text}</h3>
+return (
+  <div className="Pantalla">
+    <img className='Imatgepok' src={pokemonActiu?.sprites.front_default} />
+    <div className='nompok'>
+      No{pokemonActiu?.id} {pokemonActiu?.name}
+    </div>
+      <div className='dades'>
+      <div className='tipus_estil'>
+        <div className='meitat'>
+          {pokemonActiu?.types?.map((ti, index) => {
+            const typeName = ti.type.name.toLowerCase();
+            return (
+              <span
+                className={`tip color-${typeName}`} // Dynamic class assignment
+                key={index}
+              >
+                {ti.type.name}
+              </span>
+            );
+          })}
+          <h1 className='height'>Height: {pokemonActiu && formatWeight(pokemonActiu.height)} m</h1>
+          <h2 className='weight'>Weight: {pokemonActiu && formatWeight(pokemonActiu.weight)} kg</h2>
         </div>
     </div>
-  );
-
+    </div>
+    <h3 className='inf'>{pokemonSpecies?.flavor_text_entries[8]?.flavor_text}</h3>
+  </div>
+);
 }
 
 export default Pokemon;
