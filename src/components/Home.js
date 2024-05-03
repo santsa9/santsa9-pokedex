@@ -39,7 +39,6 @@ useEffect(() => {
           <img className='boleta'src={ball}/> 
           <div className="nombrenom">
               <span>{pokemonActiu?.name}</span> 
-              {/* No{pokemonActiu?.id} */}
           </div>
 
           </h2>
@@ -47,9 +46,9 @@ useEffect(() => {
       </header>
       <div className="partbaixa">
   {pokemons?.map((pokemon) => (
-    <div className="botonet" key={pokemon.id}>  {/* Added key prop */}
+    <div className="botonet" key={pokemon.id}>  
       <button className="llista" onClick={() => setPokemonActiu(pokemon)}>
-        <img className="boleta2" src={ball} alt="Pokeball" /> {/* Image inside button */}
+        <img className="boleta2" src={ball} alt="Pokeball" /> 
         <span>No{pokemon.id} {pokemon.name}</span>
       </button>
     </div>

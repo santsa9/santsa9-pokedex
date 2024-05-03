@@ -3,6 +3,9 @@ import "../css/Menu.css";
 import React, { useEffect,useState } from 'react';
 import { getElements } from './API';
 import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+
+
 
 function Menu({idPokemon}) {
 
@@ -12,7 +15,7 @@ function Menu({idPokemon}) {
     <div className="Menu">
       <div className="Cap"></div>
       <div className="Negre">
-        <button className="gris1"></button>
+        {/* <button className="gris1" onClick={() => setPokemonActiu(pokemon+1)}></button> */}
         <button className="gris2"></button>
         {/* botó vermell ens torna a la pagina principal */}
         <button className="red" onClick={() => {navigate('/')}}></button> 
@@ -27,3 +30,5 @@ function Menu({idPokemon}) {
 }
 
 export default Menu;
+
+

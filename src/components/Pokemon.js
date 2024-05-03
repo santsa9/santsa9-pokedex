@@ -1,4 +1,3 @@
-//import portada from '../images/portada.jpg'; // Remove this line
 import '../css/Pokemon.css'; 
 import ball from '../images/ball.png';
 import React, { useEffect,useState } from 'react';
@@ -6,16 +5,30 @@ import { getElements } from './API';
 import { useParams } from 'react-router-dom';
 // http://localhost:3001/pokemon/1 pagina per a veure els pokemons a react
 
+// serveix per fer el format correcte dels nombres on posarà una coma 
+function formatWeight(weight) {
+  const weightString = String(weight); 
+  const decimalIndex = weightString.length - 1;
+  const commaFormattedWeight = weightString.slice(0, decimalIndex) + ',' + weightString.slice(decimalIndex);
+
+  return commaFormattedWeight;
+}
+
 function Pokemon(props) {
   
   const [pokemons, setPokemons] = useState(null);
   const [pokemonActiu, setPokemonActiu] = useState(null);
+  const [pokemonSpecies, setPokemonSpecies] = useState(null);
 
   const { id } = useParams();
   useEffect(() => {
     const getPokemon = async () => {
         const { result } = await getElements("https://pokeapi.co/api/v2/pokemon/"+id);
         setPokemonActiu(result)
+    
+    const speciesResponse = await fetch("https://pokeapi.co/api/v2/pokemon-species/"+id);
+        const speciesData = await speciesResponse.json();
+        setPokemonSpecies(speciesData);
     };
     getPokemon();
 }, []);
@@ -25,24 +38,23 @@ function Pokemon(props) {
         <img className='Imatgepok'src={pokemonActiu?.sprites.front_default}/> 
         
         <div className='nompok'>
-          {pokemonActiu?.name}  
-          {/*AAAAAAAAAAAAAAAAAAAA a la pokeapi buscar pokemon-species/1/ flavor txt */}
+          No{pokemonActiu?.id} {pokemonActiu?.name}  
         </div> 
         <div className='tipus'> 
-          {/* <h1 className='tipus_estil'>{pokemonActiu?.types?.map((ti, index) => {
-          return <h6 key={index}>{ti.type.name}</h6>;
-        })} 
-          </h1> */}
-        <div className='descripcio'>
-          {pokemonActiu?.flavor_text_entries?.map}
-        </div >
-                    {/* <h3 className="mesures">
-              <div className="alcada">Height: {pokemonActiu?.height}0 cm</div>
-              <div className="alcada">Weight: {pokemonActiu?.weight} kg</div>
-              <div className="alcada">Type: {pokemonActiu?.type}</div> de moment ho trec, anirà a la segona pàgina
-            </h3> */}
-
+          <div className='tipus_estil'>
+            {pokemonActiu?.types?.map((ti, index) => {
+              return <span className='tip' key={index}>{ti.type.name}</span>;
+            })} 
+          </div>
         </div>
+        <div className='dades'>  
+        <h1 className='height'>Height: {pokemonActiu && formatWeight(pokemonActiu.height)} m</h1>
+        <h2 className='weight'>Weight: {pokemonActiu && formatWeight(pokemonActiu.weight)} kg</h2>    
+        </div>  
+        <div className='descr'>
+          <h3 className='inf'>{pokemonSpecies?.flavor_text_entries[8]?.flavor_text}</h3>
+        </div>
+        
     
     </div>
   );
@@ -50,4 +62,3 @@ function Pokemon(props) {
 }
 
 export default Pokemon;
-
