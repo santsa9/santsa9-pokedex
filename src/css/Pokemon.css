@@ -35,16 +35,19 @@
 }
 
 .tipus_estil{
-    border: 1px solid #424242;
-    display: flex;
     text-align: center;
-    border-radius: 10px;
     padding: 3px;
     margin: 5px;
     font-size: 20px;
 }
 .tip {
     margin: 0 6px;
+    padding: 3px;
+    margin: 5px;
+    border: 1px solid white;
+    border-radius: 13px;
+    text-transform: capitalize;
+    color: white;
 }
 .descr{
     height: fit-content;
@@ -74,15 +77,18 @@ h3{
     left: 0;
     margin: auto;
     display: flex;
-    bottom: 29%;
-    width: 75%;
-    height: 22%;
+    bottom: 27%;
+    width: 79%;
+    height: 23%;
     align-items: center;
     overflow: hidden;
     text-transform: math-auto;
     overflow-wrap: break-word;
     font-size: 18px;
     justify-content: flex-start;
+    border: 2px solid black;
+    border-radius: 13px;
+    background-color: azure;
 }
 
 

@@ -45,11 +45,21 @@ function Pokemon(props) {
           No{pokemonActiu?.id} {pokemonActiu?.name}  
         </div> 
         <div className='tipus'> 
-          <div className='tipus_estil'>
-            {pokemonActiu?.types?.map((ti, index) => {
-              return <span className='tip' key={index}>{ti.type.name}</span>;
-            })} 
-          </div>
+        <div className='tipus_estil'>
+  {pokemonActiu?.types?.map((ti, index) => {
+    const typeName = ti.type.name.toLowerCase(); // Ensure type name is lowercase
+
+    return (
+      <span
+        className={`tip color-${typeName}`} // Dynamic class assignment
+        key={index}
+      >
+        {ti.type.name}
+      </span>
+    );
+  })}
+</div>
+
         </div>
         <div className='dades'>  
         <h1 className='height'>Height: {pokemonActiu && formatWeight(pokemonActiu.height)} m</h1>
