@@ -5,7 +5,6 @@ import ball from '../images/ball.png';
 import React, { useEffect,useState } from 'react';
 import { getElements } from './API';
 
-
 function Home({setIdPokemon}) {
   
   const [pokemons, setPokemons] = useState(null);
