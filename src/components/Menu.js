@@ -19,7 +19,7 @@ function Menu({idPokemon}) {
         {/* botó vermell ens torna a la pagina principal */}
         <button className="red" onClick={() => {navigate('/')}}></button> 
         {/* botó verd ens porta a la pagina d'objectes */}
-        <button className="verd"onClick={() => {navigate('/objectes'+idPokemon)}}></button> 
+        <button className="verd"onClick={() => {navigate('/objectes')}}></button> 
       </div>
       <div className='bolagran'>
         {/* al fer click la pokeball gran anem a la seguent pàgina */}

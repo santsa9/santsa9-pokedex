@@ -91,14 +91,13 @@ h3{
   right: 0;
   left: 0;
   margin: auto;
-  /* display: flex; */
+  display: flex;
   bottom: 23%;
   width: 79%;
   height: 30%;
   align-items: center;
   overflow: hidden;
-  text-transform: math-auto;
-  /* overflow-wrap: anywhere; */
+  overflow-wrap: anywhere;
   font-size: 18px;
   justify-content: flex-end;
   border: 5px solid black;
@@ -108,6 +107,7 @@ h3{
   padding: 1%;
   overflow: scroll;
   align-content: center;
+  text-align: center;
 
 }
 span{
