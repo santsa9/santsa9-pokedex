@@ -72,7 +72,7 @@
   width: max-content;
   margin: auto;
   z-index: 1;
-  padding: 3px 0 4px;
+  padding: 3px 4px 4px;
   overflow: auto;
 }
 h1{
