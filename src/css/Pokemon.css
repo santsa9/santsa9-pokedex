@@ -110,66 +110,107 @@ h3{
   align-content: center;
 
 }
+span{
+  margin:3px 8px;
+}
 
 /* colors del tipus pokes */
 .color-fire {
-    background-color: #ff7402;
-  }
-  .color-grass {
-    background-color: #9bcc50;
-  }
-  .color-steel {
-    background-color: #9eb7b8;
-  }
-  .color-water {
-    background-color: #4592c4;
-  }
-  .color-psychic {
-    background-color: #f366b9;
-  }
-  .color-ground {
-    background-color: #ab9842;
-  }
-  .color-ice {
-    background-color: #51c4e7;
-  }
-  .color-flying {
-    background-color: #3dc7ef;
-  }
-  .color-ghost {
-    background-color: #4d5b64;
-  }
-  .color-normal {
-    background-color: #a4acaf;
-  }
-  .color-poison {
-    background-color: #7e0058;
-  }
-  .color-rock {
-    background-color: #a38c21;
-  }
-  .color-fighting {
-    background-color: #d56723;
-  }
-  .color-dark {
-    background-color: #707070;
-  }
-  .color-bug {
-    background-color: #729f3f;
-  }
-  /* gradient per a aconseguir el tipus drac */
-  .color-dragon {
-    background-image: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%); 
-  }
-  .color-electric {
-    background-color: #bba909;
-  }
-  .color-fairy {
-    background-color: #fdb9e9;
-  }
-  .color-shadow {
-    background-color: #7b62a3;
-  }
-  .color-unknow {
-    background-color: #757575;
-  }
+  background-color: #ff7402;
+  padding: 3px 8px;
+}
+
+.color-grass {
+  background-color: #9bcc50;
+  padding: 3px 8px;
+}
+
+.color-steel {
+  background-color: #9eb7b8;
+  padding: 3px 8px;
+}
+
+.color-water {
+  background-color: #4592c4;
+  padding: 3px 8px;
+}
+
+.color-psychic {
+  background-color: #f366b9;
+  padding: 3px 8px;
+}
+
+.color-ground {
+  background-color: #ab9842;
+  padding: 3px 8px;
+}
+
+.color-ice {
+  background-color: #51c4e7;
+  padding: 3px 8px;
+}
+
+.color-flying {
+  background-color: #3dc7ef;
+  padding: 3px 8px;
+}
+
+.color-ghost {
+  background-color: #4d5b64;
+  padding: 3px 8px;
+}
+
+.color-normal {
+  background-color: #a4acaf;
+  padding: 3px 8px;
+}
+
+.color-poison {
+  background-color: #7e0058;
+  padding: 3px 8px;
+}
+
+.color-rock {
+  background-color: #a38c21;
+  padding: 3px 8px;
+}
+
+.color-fighting {
+  background-color: #d56723;
+  padding: 3px 8px;
+}
+
+.color-dark {
+  background-color: #707070;
+  padding: 3px 8px;
+}
+
+.color-bug {
+  background-color: #729f3f;
+  padding: 3px 8px;
+}
+
+.color-dragon {
+  background-image: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+  padding: 3px 8px;
+}
+
+.color-electric {
+  background-color: #bba909;
+  padding: 3px 8px;
+}
+
+.color-fairy {
+  background-color: #fdb9e9;
+  padding: 3px 8px;
+}
+
+.color-shadow {
+  background-color: #7b62a3;
+  padding: 3px 8px;
+}
+
+.color-unknow {
+  background-color: #757575;
+  padding: 3px 8px;
+}
