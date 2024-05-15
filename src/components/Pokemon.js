@@ -17,7 +17,6 @@ function formatWeight(weight) {
 }
 
 function Pokemon(props) {
-  
   const [pokemons, setPokemons] = useState(null);
   const [pokemonActiu, setPokemonActiu] = useState(null);
   const [pokemonSpecies, setPokemonSpecies] = useState(null);

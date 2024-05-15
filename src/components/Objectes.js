@@ -1,4 +1,4 @@
-import '../css/Pokemon.css'; 
+import '../css/Objectes.css'; 
 import React, { useEffect,useState } from 'react';
 import { getElements } from './API';
 import { useParams } from 'react-router-dom';
@@ -17,10 +17,12 @@ function formatWeight(weight) {
 }
 
 function Pokemon(props) {
-  
   const [pokemons, setPokemons] = useState(null);
   const [pokemonActiu, setPokemonActiu] = useState(null);
   const [pokemonSpecies, setPokemonSpecies] = useState(null);
+  const [pokemonMote, setPokemonMote] = useState(null);
+  const [pokemonData, setPokemonData] = useState(null);
+  const [isFrontView, setIsFrontView] = useState(true);
 
   const { id } = useParams();
   useEffect(() => {
@@ -31,18 +33,73 @@ function Pokemon(props) {
     const speciesResponse = await fetch("https://pokeapi.co/api/v2/pokemon-species/"+id);
         const speciesData = await speciesResponse.json();
         setPokemonSpecies(speciesData);
+
+    const pokemonMote = await fetch("https://pokeapi.co/api/v2/pokemon-species/"+id);
+        const pokemonMotes = await pokemonMote.json();
+        setPokemonMote(pokemonMotes);
     };
     getPokemon();
 }, );
 
+useEffect(() => {
+  const fetchPokemonData = async () => {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    const data = await response.json();
+
+    const pokemon = {
+      ...data,
+      species: await fetchPokemonSpecies(id),
+    };
+
+    setPokemonData(pokemon);
+  };
+
+  const fetchPokemonSpecies = async (id) => {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+    return await response.json();
+  };
+
+  fetchPokemonData();
+}, [id]);
+
+const toggleView = () => {
+  setIsFrontView(!isFrontView);
+};
+
+
+
 return (
   <div className="Pantalla">
-    <img className='Imatgepok' src={pokemonActiu?.sprites.front_default} />
+    <img className="Imatgepok"
+            src={isFrontView ? pokemonActiu?.sprites.front_default : pokemonActiu?.sprites.back_default}
+            onClick={toggleView}
+    />
     <div className='nompok'>
       No{pokemonActiu?.id} {pokemonActiu?.name}
     </div>
+      <div className='dades'>
+      <div className='tipus_estil'>
+        <div className='meitat'>
+          
+          {pokemonActiu?.types?.map((ti, index) => {
+            const typeName = ti.type.name.toLowerCase();
+            return (
+              <span
+                className={`tip color-${typeName}`} 
+                key={index}
+              >
+                {ti.type.name}
+              </span>
+            );
+          })}
+          <h1 className='inf'>{pokemonMote?.genera[7]?.genus}</h1> 
+          <h1 className='height'>Height: {pokemonActiu && formatWeight(pokemonActiu.height)} m</h1>
+          <h1 className='weight'>Weight: {pokemonActiu && formatWeight(pokemonActiu.weight)} kg</h1>
+        </div>
+    </div>
+    </div>
+    <h3 className='inf'>{pokemonSpecies?.flavor_text_entries[8]?.flavor_text}</h3>
   </div>
-
 );
 }
 

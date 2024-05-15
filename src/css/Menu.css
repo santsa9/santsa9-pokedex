@@ -36,28 +36,28 @@ border-radius: 10px 10px 15px 15px;
 }
 
 .red {
-height: 4%;
-width: 7%;
-background: red;
-margin: 7px;
-border-radius: 50%;
-position: absolute;
-left: 18%;
-bottom: 17%;
+    height: 8vw;
+    width: 8vw;
+    background: red;
+    margin: 7px;
+    border-radius: 50%;
+    position: absolute;
+    left: 18%;
+    bottom: 16%;
 }
 
 .verd {
-height: 10%;
-width: 17%;
-background: green;
-margin: 7px;
-border-color: black;
-border-radius: 50%;
-border-width: 8px;
-border-style: solid;
-position: absolute;
-right: 0%;
-bottom: 12%;
+    height: 13vw;
+    width: 13vw;
+    background: green;
+    margin: 7px;
+    border-color: black;
+    border-radius: 50%;
+    border-width: 5px;
+    border-style: solid;
+    position: absolute;
+    right: 2%;
+    bottom: 11%;
 }
 
 .bolagran{

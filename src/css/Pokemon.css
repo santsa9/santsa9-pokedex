@@ -12,17 +12,18 @@
 }
 .nompok {
   text-transform: capitalize;
-  font-size: 6vw;
+  font-size: 7vw;
   position: absolute;
   right: 0;
   left: 0;
   font-weight: bold;
-  top: 34.9%;
+  top: 34%;
   border: 3px solid black;
   border-radius: 13px;
   max-width: 85%;
   margin: auto;
   background-color: azure;
+  min-width: -moz-fit-content;
   min-width: fit-content;
   padding: 1px;
 }
@@ -60,9 +61,9 @@
 .dades{
   display: flex;
   position: fixed;
-  bottom: 47.5%;
+  bottom: 45.8%;
   flex-direction: column;
-  max-height: 18%;
+  max-height: 19%;
   right: 0;
   left: 0;
   border: 3px solid black;
@@ -70,15 +71,13 @@
   background-color: azure;
   width: max-content;
   margin: auto;
-  padding: 3px;
-  /* border-bottom: none; */
-  /* border-bottom-left-radius: 0; */
-  /* border-bottom-right-radius: 0; */
   z-index: 1;
+  padding: 3px 0 4px;
+  overflow: auto;
 }
 h1{
     text-align: center;
-    font-size: 4.5vw;
+    font-size: 5.5vw;
     margin-block: 0%;
     margin-top: 3%;
 }
@@ -88,27 +87,29 @@ h2{
     font-size: 20px;
 }
 h3{
-    position: fixed;
-    right: 0;
-    left: 0;
-    margin: auto;
-    display: flex;
-    bottom: 23%;
-    width: 79%;
-    /* height: 23%; */
-    align-items: center;
-    overflow: hidden;
-    text-transform: math-auto;
-    /* overflow-wrap: anywhere; */
-    font-size: 18px;
-    justify-content: flex-end;
-    border: 5px solid black;
-    border-radius: 13px;
-    background-color: azure;
-    max-height: 23%;
-    padding: 1%;
-}
+  position: fixed;
+  right: 0;
+  left: 0;
+  margin: auto;
+  /* display: flex; */
+  bottom: 23%;
+  width: 79%;
+  height: 30%;
+  align-items: center;
+  overflow: hidden;
+  text-transform: math-auto;
+  /* overflow-wrap: anywhere; */
+  font-size: 18px;
+  justify-content: flex-end;
+  border: 5px solid black;
+  border-radius: 13px;
+  background-color: azure;
+  max-height: 20%;
+  padding: 1%;
+  overflow: scroll;
+  align-content: center;
 
+}
 
 /* colors del tipus pokes */
 .color-fire {
