@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "./components/Layout";
 import Home from "./components/Home";
 import Pokemon from "./components/Pokemon";
+import Objectes from "./components/Objectes";
 
 const routes = (idPokemon, setIdPokemon) => [
     {
@@ -9,7 +10,10 @@ const routes = (idPokemon, setIdPokemon) => [
         element: <Layout idPokemon={idPokemon}/>,
         children: [
             { path: "/", element: <Home setIdPokemon={setIdPokemon}/> },
-            { path: "/pokemon/:id", element: <Pokemon /> }
+            { path: "/pokemon/:id", element: <Pokemon /> },
+            // { path: "/objectes/:id", element: <Objectes />},
+            { path: "/objectes", element: <Objectes />}
+            
         ],
     },
 ];

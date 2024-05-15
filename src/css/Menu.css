@@ -43,7 +43,7 @@ margin: 7px;
 border-radius: 50%;
 position: absolute;
 left: 18%;
-bottom: 20%;
+bottom: 17%;
 }
 
 .verd {
@@ -57,7 +57,7 @@ border-width: 8px;
 border-style: solid;
 position: absolute;
 right: 0%;
-bottom: 14%;
+bottom: 12%;
 }
 
 .bolagran{
@@ -65,7 +65,7 @@ bottom: 5%;
 }
 
 .Bola {
-height: 25%;
+height: 22%;
 background: url("../images/pokeball.png") center no-repeat;
 width: 45%;
 position: absolute;

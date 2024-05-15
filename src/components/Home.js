@@ -10,7 +10,7 @@ function Home({setIdPokemon}) {
   const [pokemons, setPokemons] = useState(null);
   const [pokemonActiu, setPokemonActiu] = useState(null);
 
-  // fins a la gen 4
+  // fins a la gen 4 pkmn 493
   useEffect(() => {
     const getPokemon = async () => {
         const { result } = await getElements("https://pokeapi.co/api/v2/pokemon?offset=0&limit=493");
@@ -34,12 +34,11 @@ useEffect(() => {
       <header className="partdalt">
         <h1 className="Primer">
           <img className='Poke1'src={pokemonActiu?.sprites.front_default}/> 
-        <h2 className="lineapoke">
-          <img className='boleta'src={ball}/> 
-          <div className="nombrenom">
-              <span>{pokemonActiu?.name}</span> 
-          </div>
-
+          <h2 className="lineapoke">
+            <img className='boleta'src={ball}/> 
+            <div className="nombrenom">
+                <span>{pokemonActiu?.name}</span> 
+            </div>
           </h2>
         </h1>
       </header>
