@@ -12,7 +12,7 @@
 }
 .nompok {
   text-transform: capitalize;
-  font-size: 5vw;
+  font-size: 6vw;
   position: absolute;
   right: 0;
   left: 0;
@@ -58,23 +58,23 @@
 }
 
 .dades{
-    display: flex;
-    position: fixed;
-    bottom: 47.5%;
-    flex-direction: column;
-    height: auto;
-    right: 0;
-    left: 0;
-    border: 3px solid black;
-    border-radius: 13px;
-    background-color: azure;
-    width: max-content;
-    margin: auto;
-    padding: 5px;
-    /* border-bottom: none; */
-    /* border-bottom-left-radius: 0; */
-    /* border-bottom-right-radius: 0; */
-    z-index: 1;
+  display: flex;
+  position: fixed;
+  bottom: 47.5%;
+  flex-direction: column;
+  max-height: 18%;
+  right: 0;
+  left: 0;
+  border: 3px solid black;
+  border-radius: 13px;
+  background-color: azure;
+  width: max-content;
+  margin: auto;
+  padding: 3px;
+  /* border-bottom: none; */
+  /* border-bottom-left-radius: 0; */
+  /* border-bottom-right-radius: 0; */
+  z-index: 1;
 }
 h1{
     text-align: center;

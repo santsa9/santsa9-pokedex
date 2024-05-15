@@ -31,8 +31,8 @@
 }
 .Poke1 {
     object-fit: fill;
-    height: 100%;
-    width: 70%;
+    height: 93%;
+    width: 75%;
     text-transform: capitalize;
 }
 
@@ -118,7 +118,7 @@
 
 /*part de sota que conté l'scroll i la llista de la pokédex*/
 .partbaixa{
-    height: 47%;
+    height: 47.5%;
     width: 97%;
     position: absolute;
     margin: auto;

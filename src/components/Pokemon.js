@@ -22,7 +22,8 @@ function Pokemon(props) {
   const [pokemonActiu, setPokemonActiu] = useState(null);
   const [pokemonSpecies, setPokemonSpecies] = useState(null);
   const [pokemonMote, setPokemonMote] = useState(null);
-
+  const [pokemonData, setPokemonData] = useState(null);
+  const [isFrontView, setIsFrontView] = useState(true);
 
   const { id } = useParams();
   useEffect(() => {
@@ -41,16 +42,46 @@ function Pokemon(props) {
     getPokemon();
 }, );
 
+useEffect(() => {
+  const fetchPokemonData = async () => {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    const data = await response.json();
+
+    const pokemon = {
+      ...data,
+      species: await fetchPokemonSpecies(id),
+    };
+
+    setPokemonData(pokemon);
+  };
+
+  const fetchPokemonSpecies = async (id) => {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+    return await response.json();
+  };
+
+  fetchPokemonData();
+}, [id]);
+
+const toggleView = () => {
+  setIsFrontView(!isFrontView);
+};
+
+
+
 return (
   <div className="Pantalla">
-    <img className='Imatgepok' src={pokemonActiu?.sprites.front_default} />   
-    {/* fer que si fem click mostri l'esquena del pokemon ------------------------------------*/}
+    <img className="Imatgepok"
+            src={isFrontView ? pokemonActiu?.sprites.front_default : pokemonActiu?.sprites.back_default}
+            onClick={toggleView}
+    />
     <div className='nompok'>
       No{pokemonActiu?.id} {pokemonActiu?.name}
     </div>
       <div className='dades'>
       <div className='tipus_estil'>
         <div className='meitat'>
+          
           {pokemonActiu?.types?.map((ti, index) => {
             const typeName = ti.type.name.toLowerCase();
             return (
