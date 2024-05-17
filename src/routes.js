@@ -10,10 +10,8 @@ const routes = (idPokemon, setIdPokemon) => [
         element: <Layout idPokemon={idPokemon}/>,
         children: [
             { path: "/", element: <Home setIdPokemon={setIdPokemon}/> },
-            { path: "/pokemon/:id", element: <Pokemon /> },
-            // { path: "/objectes/:id", element: <Objectes />},
+            { path: "/pokemon/:id", element: <Pokemon idPokemon={idPokemon} setIdPokemon={setIdPokemon}/> },
             { path: "/objectes", element: <Objectes />}
-            
         ],
     },
 ];

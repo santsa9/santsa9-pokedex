@@ -17,11 +17,9 @@ function formatWeight(weight) {
 }
 
 function Pokemon(props) {
-  const [pokemons, setPokemons] = useState(null);
   const [pokemonActiu, setPokemonActiu] = useState(null);
   const [pokemonSpecies, setPokemonSpecies] = useState(null);
   const [pokemonMote, setPokemonMote] = useState(null);
-  const [pokemonData, setPokemonData] = useState(null);
   const [isFrontView, setIsFrontView] = useState(true);
 
   const { id } = useParams();
@@ -39,7 +37,7 @@ function Pokemon(props) {
         setPokemonMote(pokemonMotes);
     };
     getPokemon();
-}, );
+}, []);
 
 useEffect(() => {
   const fetchPokemonData = async () => {
@@ -51,16 +49,24 @@ useEffect(() => {
       species: await fetchPokemonSpecies(id),
     };
 
-    setPokemonData(pokemon);
+    setPokemonActiu(pokemon);
   };
 
   const fetchPokemonSpecies = async (id) => {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
     return await response.json();
   };
-
+  setPokemonActiu(null)
   fetchPokemonData();
+  props.setIdPokemon(parseInt(id));
 }, [id]);
+
+useEffect(() => {
+  if (props.idPokemon == null) {
+    props.setIdPokemon(parseInt(id));
+  }
+}, [props.idPokemon]);
+
 
 const toggleView = () => {
   setIsFrontView(!isFrontView);
@@ -69,7 +75,9 @@ const toggleView = () => {
 
 
 return (
-  <div className="Pantalla">
+
+    pokemonActiu ? 
+    <div className="Pantalla">
     <img className="Imatgepok"
             src={isFrontView ? pokemonActiu?.sprites.front_default : pokemonActiu?.sprites.back_default}
             onClick={toggleView}
@@ -99,7 +107,13 @@ return (
     </div>
     </div>
     <h3 className='inf'>{pokemonSpecies?.flavor_text_entries[8]?.flavor_text}</h3>
-  </div>
+    </div>
+    :
+    <div className="Pantalla" style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '75%', width: '80%'}}>
+      <div className='loader'></div>
+    </div>
+
+
 );
 }
 
