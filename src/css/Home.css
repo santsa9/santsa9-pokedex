@@ -34,17 +34,21 @@
 }
 .Poke1 {
     object-fit: fill;
-    height: 93%;
-    width: 75%;
+    height: 200px;
+    top: 10%;
+    width: 200px;
     text-transform: capitalize;
+    max-height: 82%;
+    max-width: 90%;
+    position: relative;
 }
 
 .lineapoke{
     display: flex;
     /* width: 42%; */
-    position: absolute;
+    /* position: relative; */
     /* right: 11%; */
-    top: 92%;
+    /* top: 92%; */
     /* margin: inherit; */
     align-items: center;
     justify-content: center;
@@ -55,10 +59,11 @@
     right: 0;
     left: 0;
     font-weight: bold;
-    /* top: 36%; */
+    top: 42%;
     border: 3px solid black;
     border-radius: 13px;
-    max-width: 85%;
+    max-width: 94%;
+    max-height: 20%;
     margin: auto;
     background-color: azure;
 }

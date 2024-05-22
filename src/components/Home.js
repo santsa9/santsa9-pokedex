@@ -9,7 +9,7 @@ function Home({setIdPokemon}) {
   
   const [pokemons, setPokemons] = useState(null);
   const [pokemonActiu, setPokemonActiu] = useState(null);
-
+  const [isFrontView, setIsFrontView] = useState(true);
   // fins a la gen  pkmn 809
   useEffect(() => {
     const getPokemon = async () => {
@@ -25,6 +25,10 @@ function Home({setIdPokemon}) {
     getPokemon();
 }, []);
 
+const toggleView = () => {
+  setIsFrontView(!isFrontView);
+    };
+
 useEffect(() => {
     setIdPokemon(pokemonActiu?.id);
 }, [pokemonActiu]);
@@ -33,14 +37,19 @@ useEffect(() => {
     <div className="Pantalla">
       <header className="partdalt">
         <h1 className="Primer">
-          <img className='Poke1'src={pokemonActiu?.sprites.front_default}/> 
+          <img
+           className='Poke1'
+           src={isFrontView ? pokemonActiu?.sprites?.other?.showdown?.front_default : pokemonActiu?.sprites?.other?.showdown?.back_default} 
+           onClick={toggleView} onDoubleClick={pokemonActiu?.sprites?.other?.showdown?.front_shiny}
+          /> 
+        </h1>
           <h2 className="lineapoke">
             <img className='boleta'src={ball}/> 
             <div className="nombrenom">
                 <span>{pokemonActiu?.name}</span> 
             </div>
           </h2>
-        </h1>
+        
       </header>
       <div className="partbaixa">
   {pokemons?.map((pokemon) => (
