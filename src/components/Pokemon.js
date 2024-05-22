@@ -21,23 +21,22 @@ function Pokemon(props) {
   const [pokemonSpecies, setPokemonSpecies] = useState(null);
   const [pokemonMote, setPokemonMote] = useState(null);
   const [isFrontView, setIsFrontView] = useState(true);
+// fer pokemon species i pokemon mote amb una const
 
   const { id } = useParams();
+
   useEffect(() => {
     const getPokemon = async () => {
-        const { result } = await getElements("https://pokeapi.co/api/v2/pokemon/"+id);
-        setPokemonActiu(result)
-    
-    const speciesResponse = await fetch("https://pokeapi.co/api/v2/pokemon-species/"+id);
-        const speciesData = await speciesResponse.json();
-        setPokemonSpecies(speciesData);
+      const response = await getElements(`https://pokeapi.co/api/v2/pokemon/${id}`);
+      setPokemonActiu(response.result);
 
-    const pokemonMote = await fetch("https://pokeapi.co/api/v2/pokemon-species/"+id);
-        const pokemonMotes = await pokemonMote.json();
-        setPokemonMote(pokemonMotes);
+      const speciesResponse = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+      const speciesData = await speciesResponse.json();
+      setPokemonSpecies(speciesData);
     };
+
     getPokemon();
-}, []);
+  }, [id]);
 
 useEffect(() => {
   const fetchPokemonData = async () => {
@@ -54,7 +53,9 @@ useEffect(() => {
 
   const fetchPokemonSpecies = async (id) => {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
-    return await response.json();
+    const pokemonMotes = await response.json();
+    setPokemonMote(pokemonMotes);
+
   };
   setPokemonActiu(null)
   fetchPokemonData();
@@ -73,48 +74,47 @@ const toggleView = () => {
 };
 
 
-
 return (
-
-    pokemonActiu ? 
+  pokemonActiu ? (
     <div className="Pantalla">
-    <img className="Imatgepok"
-            src={isFrontView ? pokemonActiu?.sprites.front_default : pokemonActiu?.sprites.back_default}
-            onClick={toggleView}
-    />
-    <div className='nompok'>
-      No{pokemonActiu?.id} {pokemonActiu?.name}
-    </div>
-      <div className='dades'>
-      <div className='tipus_estil'>
-        <div className='meitat'>
-          
-          {pokemonActiu?.types?.map((ti, index) => {
-            const typeName = ti.type.name.toLowerCase();
-            return (
-              <span
-                className={`tip color-${typeName}`} 
-                key={index}
-              >
-                {ti.type.name}
-              </span>
-            );
-          })}
-          <h1 className='inf'>{pokemonMote?.genera[7]?.genus}</h1> 
-          <h1 className='height'>Height: {pokemonActiu && formatWeight(pokemonActiu.height)} m</h1>
-          <h1 className='weight'>Weight: {pokemonActiu && formatWeight(pokemonActiu.weight)} kg</h1>
+      <img
+        className="Imatgepok"
+        src={isFrontView ? pokemonActiu?.sprites.front_default : pokemonActiu?.sprites.back_default}
+        onClick={toggleView}
+      />
+      <div className="nompok">
+        No{pokemonActiu?.id} {pokemonActiu?.name}
+      </div>
+      <div className="contenidor_dades">
+        <div className="dades">
+          <div className="tipus_estil">
+            <div className="meitat">
+              {pokemonActiu?.types?.map((ti, index) => {
+                const typeName = ti.type.name;
+                return (
+                  <div className={`tip color-${typeName}`} key={index}>
+                    {ti.type.name}
+                  </div>
+                );
+              })}
+              <h1 className="inf">{(pokemonMote?.genera[7]?.genus)}</h1>    
+              {/* actualitzar */}
+              <h1 className="height">Height: {pokemonActiu && formatWeight(pokemonActiu.height)} m</h1>
+              <h1 className="weight">Weight: {pokemonActiu && formatWeight(pokemonActiu.weight)} kg</h1>
+            </div>
+          </div>
         </div>
+      </div>
+      <h3 className="inf">{pokemonSpecies?.flavor_text_entries.find(entry => entry.language.name === "en")?.flavor_text}</h3>
+      {/* actualitzar */}
     </div>
+  ) : (
+    <div className="Pantalla" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '75%', width: '80%' }}>
+      <div className="loader"></div>
     </div>
-    <h3 className='inf'>{pokemonSpecies?.flavor_text_entries[8]?.flavor_text}</h3>
-    </div>
-    :
-    <div className="Pantalla" style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '75%', width: '80%'}}>
-      <div className='loader'></div>
-    </div>
-
-
+  )
 );
+
 }
 
 export default Pokemon;

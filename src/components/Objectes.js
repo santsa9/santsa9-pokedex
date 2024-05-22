@@ -16,23 +16,16 @@ function Pokemon(props) {
   const { id } = useParams();
   useEffect(() => {
     const getPokemon = async () => {
-        const { result } = await getElements("https://pokeapi.co/api/v2/pokemon/"+id);
-        setPokemonActiu(result)
-    
-    const speciesResponse = await fetch("https://pokeapi.co/api/v2/pokemon-species/"+id);
-        const speciesData = await speciesResponse.json();
-        setPokemonSpecies(speciesData);
-
-    const pokemonMote = await fetch("https://pokeapi.co/api/v2/pokemon-species/"+id);
-        const pokemonMotes = await pokemonMote.json();
-        setPokemonMote(pokemonMotes);
+      const response = await getElements(`https://pokeapi.co/api/v2/pokemon/${id}`);
+      setPokemonActiu(response.result);
     };
     getPokemon();
 }, );
 
 return (
   <div className="Pantalla">
-    <h1 className='prova'>Stats i moviments del pokemon</h1> 
+    <h1 className='prova'>Pokémon stats</h1> 
+    <h3 className="inf">{pokemonSpecies?.flavor_text_entries.find(entry => entry.language.name === "en")?.flavor_text}</h3>
   </div>
 );
 }
