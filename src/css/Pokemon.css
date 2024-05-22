@@ -110,13 +110,13 @@ h3{
   align-items: center;
   overflow: hidden;
   overflow-wrap: anywhere;
-  font-size: 5vw;
+  font-size: 4vw;
   justify-content: flex-end;
   border: 5px solid black;
   border-radius: 13px;
   background-color: azure;
   max-height: 10%;
-  padding: 6% 1% 6% 1%;
+  padding: 5% 1% 5% 1%;
   overflow: scroll;
   align-content: center;
   text-align: center;
