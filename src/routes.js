@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "./components/Layout";
 import Home from "./components/Home";
 import Pokemon from "./components/Pokemon";
-import Objectes from "./components/Objectes";
+import Stats from "./components/Stats";
 
 const routes = (idPokemon, setIdPokemon) => [
     {
@@ -11,7 +11,7 @@ const routes = (idPokemon, setIdPokemon) => [
         children: [
             { path: "/", element: <Home setIdPokemon={setIdPokemon}/> },
             { path: "/pokemon/:id", element: <Pokemon idPokemon={idPokemon} setIdPokemon={setIdPokemon}/> },
-            { path: "/objectes", element: <Objectes />}
+            { path: "/stats/:id", element: <Stats idPokemon={idPokemon} setIdPokemon={setIdPokemon}/>}
         ],
     },
 ];

@@ -1,29 +1,45 @@
 import pokebola from '../images/pokeball.png';
 import "../css/Menu.css";
-import React, { useEffect,useState } from 'react';
-import { getElements } from './API';
+import React, { useEffect, useState } from 'react';
+import { getElements } from './API'; // Assuming this fetches Pokemon data
 import { useNavigate } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
 
-function Menu({idPokemon}) {
-
+function Menu({ idPokemon }) {
   const navigate = useNavigate();
+
+  const handleNavigateToPokemon = (direction) => {
+    if (direction === 'next') {
+      navigate(`/pokemon/${idPokemon + 1}`);
+    } else if (direction === 'prev') {
+      navigate(`/pokemon/${Math.max(idPokemon - 1, 1)}`); // Ensure we don't navigate below Pokemon 1
+    }
+  };
 
   return (
     <div className="Menu">
       <div className="Cap"></div>
       <div className="Negre">
-      {/* avançar1 i restar1 */}
-        <button className="gris1"onClick={() => {navigate('/pokemon/'+(idPokemon+1))}}></button>
-        <button className="gris2"onClick={() => {navigate('/pokemon/'+(idPokemon-1))}}></button>
-        {/* botó vermell ens torna a la pagina principal */}
-        <button className="red" onClick={() => {navigate('/')}}></button> 
-        {/* botó verd ens porta a la pagina d'objectes */}
-        <button className="verd"onClick={() => {navigate('objectes/')}}></button> 
+        {/* Display logic based on current pathname (consider using a state variable for efficiency) */}
       </div>
-      <div className='bolagran'>
-        {/* al fer click la pokeball gran anem a la seguent pàgina */}
-        <button className="Bola" onClick={() => {navigate('pokemon/'+idPokemon)}}></button> 
+
+      <button className="gris1" onClick={() => handleNavigateToPokemon('next')}>
+        {/* Consider adding an icon or label for clarity */}
+      </button>
+      <button className="gris2" onClick={() => handleNavigateToPokemon('prev')}>
+        {/* Consider adding an icon or label for clarity */}
+      </button>
+
+      <button className="red" onClick={() => navigate('/')}>
+        {/* Consider adding an icon or label for "Home" */}
+      </button>
+      <button className="verd" onClick={() => navigate(`/stats/${idPokemon}`)}>
+        {/* Consider adding an icon or label for "Stats" */}
+      </button>
+
+      <div className="bolagran">
+        <button className="Bola" onClick={() => navigate(`/pokemon/${idPokemon}`)}>
+          {/* Consider using a Pokeball image for better visual representation */}
+        </button>
       </div>
     </div>
   );
