@@ -16,7 +16,14 @@ function Pokemon(props) {
       setPokemonActiu(response.result);
     };
     getPokemon();
+    props.setIdPokemon(parseInt(id));
   }, [id]);
+
+  useEffect(() => {
+    if (props.idPokemon == null) {
+      props.setIdPokemon(parseInt(id));
+    }
+  }, [props.idPokemon]);
 
   const toggleView = () => {
     setIsFrontView(!isFrontView);
@@ -24,32 +31,42 @@ function Pokemon(props) {
 
   return (
     <div className="Pantalla">
-      <h2>Pokémon Stats</h2>
+      {/* <h2>Pokémon Stats</h2> */}
       {pokemonActiu ? (
         <div className="stats">
           <div className="nom">{pokemonActiu.name}</div>
-          <img
-            className="imatgepokem"
-            src={
-              isFrontView
-                ? pokemonActiu?.sprites?.other?.showdown?.front_default
-                : pokemonActiu?.sprites?.other?.showdown?.back_default
-            }
-            onClick={toggleView}
-          />
+          <div className='containerimg'>
+            <img
+              className="imatgepokem"
+              src={
+                isFrontView
+                  ? pokemonActiu?.sprites?.other?.showdown?.front_default
+                  : pokemonActiu?.sprites?.other?.showdown?.back_default
+              }
+              onClick={toggleView}
+            />
+           </div>
           <div className="abilities_div">
-            <div className='tipusabilities'>Abilities:</div>
-            {pokemonActiu?.abilities?.map((ability) => (
-              <div key={ability.ability.name}>{ability.ability.name}</div>
-            ))}
-          </div>
-          <div className="llistastats">
-            <div className='tipusstats'>Base stats</div>
-            {pokemonActiu.stats.map((stat) => (
-              <div key={stat.stat.name}>
-                {stat.stat.name}: {stat.base_stat}
-              </div>
-            ))}
+            <div className='abilities_container'>
+              <div className='tipusabilities'>Abilities</div>
+              {pokemonActiu?.abilities?.map((ability) => (
+                <div key={ability.ability.name}>{ability.ability.name}</div>
+              ))}
+            </div>
+            <div className="llistastats">
+              <div className='tipusstats'>Base stats</div>
+              {pokemonActiu.stats.map((stat) => (
+                <div key={stat.stat.name}>
+                  {stat.stat.name}: {stat.base_stat}
+                </div>
+              ))}
+             </div>
+            <div className="moves_div">
+              <div className='tipusmoves'>Moves</div>
+              {pokemonActiu.moves.map((move, index) => (
+                <div key={index}>{move.move.name}</div>
+              ))}
+            </div>
           </div>
         </div>
       ) : (

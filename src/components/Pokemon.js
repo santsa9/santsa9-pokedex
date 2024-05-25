@@ -21,7 +21,6 @@ function Pokemon(props) {
   const [pokemonSpecies, setPokemonSpecies] = useState(null);
   const [pokemonMote, setPokemonMote] = useState(null);
   const [isFrontView, setIsFrontView] = useState(true);
-// fer pokemon species i pokemon mote amb una const
 
   const { id } = useParams();
 

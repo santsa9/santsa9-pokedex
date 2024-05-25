@@ -9,13 +9,27 @@ h2{
     font-size: 8vw;
 }
 .nom{
+    max-width: fit-content;
+    border-radius: 20px;
     font-size: 8vw;
+    background-color: azure;
+    border: 3px solid black;
+    margin: 1% 1% 0% 1%;
+    max-width: 100%;
+
 
 }
-
+.containerimg{
+    width: 100%;
+    height: 10%;
+}
 .imatgepokem{
     width: 35%;
-    padding: 1%
+    padding: 1%;
+    right: 0;
+    position: relative;
+    left: 0;
+    margin: auto;
 }
 
 .llistastats{
@@ -27,32 +41,85 @@ h2{
     background-color: azure;
     border: 3px solid black;
     margin: 3% 2% 3% 2%;
-    padding: 1%;
+    padding: 3%;
     text-align: left;
 }
 
 .abilities_div{
-    font-size: 6vw;
-    display: flex;
+    font-size: 5vw;
+    /* display: flex; */
     justify-content: space-around;
     text-align: center;
     border-radius: 13px;
-    max-width: 95%;
+    max-width: 70%;
     margin: auto;
     background-color: azure;
     border: 3px solid black;
     padding: 1%;
-}
+    position: absolute;
+    right: 0;
+    left: 0;
+    overflow: auto;
+    height: -webkit-fill-available;
 
+}
+.abilities_container{
+    font-size: 5vw;
+    justify-content: space-around;
+    border-radius: 20px;
+    max-width: 95%;
+    margin: auto;
+    background-color: azure;
+    border: 3px solid black;
+    margin: 3% 2% 3% 2%;
+    padding: 3%;
+    text-align: left;
+}
+.tipusabilities{
+    font-size: 6vw;
+    display: block;
+    justify-content: space-around;
+    border-radius: 13px;
+    max-width: 60%;
+    margin: auto;
+    background-color: azure;
+    border: 3px solid black;
+    display: block;
+    text-align: center;
+}
 .tipusstats{
     font-size: 6vw;
     display: block;
     justify-content: space-around;
     border-radius: 13px;
-    max-width: 100%;
-    /* margin: auto; */
+    max-width: 65%;
+    margin: auto;
     background-color: azure;
     border: 3px solid black;
     display: block;
     text-align: center;
+}
+.tipusmoves{
+    font-size: 6vw;
+    display: block;
+    justify-content: space-around;
+    border-radius: 13px;
+    max-width: 65%;
+    margin: auto;
+    background-color: azure;
+    border: 3px solid black;
+    display: block;
+    text-align: center;
+}
+.moves_div{
+    font-size: 5vw;
+    justify-content: space-around;
+    border-radius: 20px;
+    max-width: 95%;
+    margin: auto;
+    background-color: azure;
+    border: 3px solid black;
+    margin: 3% 2% 3% 2%;
+    padding: 3%;
+    text-align: left;
 }
