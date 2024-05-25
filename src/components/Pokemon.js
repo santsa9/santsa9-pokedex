@@ -2,6 +2,7 @@ import '../css/Pokemon.css';
 import React, { useEffect,useState } from 'react';
 import { getElements } from './API';
 import { useParams } from 'react-router-dom';
+import ball from '../images/ball.png';
 
 // serveix per fer el format correcte dels nombres on posarà una coma 
 function formatWeight(weight) {
@@ -82,6 +83,7 @@ return (
         onClick={toggleView}
       />
       <div className="nompok">
+        <img className='boleta'src={ball}/> 
         No{pokemonActiu?.id} {pokemonActiu?.name}
       </div>
       <div className="contenidor_dades">

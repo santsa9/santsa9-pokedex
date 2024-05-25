@@ -8,14 +8,23 @@ h2{
     margin: auto;
     font-size: 8vw;
 }
-.nom{
-    max-width: fit-content;
-    border-radius: 20px;
+.nompok2{
+    min-width: fit-content;
+    padding: 1px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
     font-size: 8vw;
-    background-color: azure;
+    /* position: absolute; */
+    font-weight: bold;
     border: 3px solid black;
-    margin: 1% 1% 0% 1%;
-    max-width: 100%;
+    border-radius: 13px;
+    max-width: 94%;
+    max-height: 20%;
+    margin: auto;
+    background-color: azure;
 
 
 }
@@ -30,6 +39,7 @@ h2{
     position: relative;
     left: 0;
     margin: auto;
+    max-height: max-content;
 }
 
 .llistastats{
@@ -51,7 +61,7 @@ h2{
     justify-content: space-around;
     text-align: center;
     border-radius: 13px;
-    max-width: 70%;
+    max-width: 85%;
     margin: auto;
     background-color: azure;
     border: 3px solid black;
@@ -123,3 +133,62 @@ h2{
     padding: 3%;
     text-align: left;
 }
+
+.conjuntstats{
+    font-size: 5vw;
+    justify-content: space-around;
+    border-radius: 20px;
+    max-width: 95%;
+    /* margin: auto; */
+    background-color: azure;
+    border: 2px solid black;
+    margin: 3% 2% 3% 2%;
+    padding: 3%;
+}
+.conjuntmovs{
+    font-size: 5vw;
+    justify-content: space-around;
+    border-radius: 20px;
+    max-width: 95%;
+    /* margin: auto; */
+    background-color: azure;
+    border: 2px solid black;
+    margin: 3% 2% 3% 2%;
+    padding: 3%;
+  }
+.stat-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    margin-top: 2px;
+  }
+  
+  .bar {
+    height: 20px;
+    margin-right: 8px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  
+  .stat-name {
+    width: 100px;
+    padding-top: 2%;
+  }
+  
+  .stat-value {
+    margin-left: 8px;
+  }
+  
+  /* Adjust color based on stat value */
+  .bar {
+    background-color: green; /* Default color */
+  }
+  
+  .bar.red {
+    background-color: red;
+  }
+  
+  .bar.orange {
+    background-color: orange;
+  }
+  
