@@ -49,12 +49,34 @@ h2{
     max-width: 95%;
     margin: auto;
     background-color: azure;
-    border: 3px solid black;
+    border: 2px solid black;
     margin: 3% 2% 3% 2%;
     padding: 3%;
     text-align: left;
+    /* background-color: #f82020; */
 }
-
+.llistatha{
+  font-size: 5vw;
+  justify-content: space-around;
+  border-radius: 20px;
+  max-width: 95%;
+  margin: auto;
+  background-color: azure;
+  border: 2px solid black;
+  margin: 2% 2% 3% 2%;
+  padding: 3%;
+}
+.llistahab{
+  font-size: 5vw;
+  justify-content: space-around;
+  border-radius: 20px;
+  max-width: 95%;
+  margin: auto;
+  background-color: azure;
+  border: 2px solid black;
+  margin: 2% 2% 3% 2%;
+  padding: 3%;
+}
 .abilities_div{
     font-size: 5vw;
     /* display: flex; */
@@ -96,6 +118,8 @@ h2{
     border: 3px solid black;
     display: block;
     text-align: center;
+    background-color: #f82020;
+    margin-top: 1px;
 }
 .tipusstats{
     font-size: 6vw;
@@ -104,7 +128,8 @@ h2{
     border-radius: 13px;
     max-width: 65%;
     margin: auto;
-    background-color: azure;
+    /* background-color: azure; */
+    background-color: #f82020;
     border: 3px solid black;
     display: block;
     text-align: center;
@@ -120,6 +145,7 @@ h2{
     border: 3px solid black;
     display: block;
     text-align: center;
+    background-color: #f82020;
 }
 .moves_div{
     font-size: 5vw;
@@ -131,30 +157,30 @@ h2{
     border: 3px solid black;
     margin: 3% 2% 3% 2%;
     padding: 3%;
-    text-align: left;
+    /* text-align: left; */
 }
 
 .conjuntstats{
-    font-size: 5vw;
-    justify-content: space-around;
-    border-radius: 20px;
-    max-width: 95%;
-    /* margin: auto; */
-    background-color: azure;
-    border: 2px solid black;
-    margin: 3% 2% 3% 2%;
-    padding: 3%;
+  font-size: 4vw;
+  border-radius: 20px;
+  max-width: 98%;
+  /* margin: auto; */
+  background-color: azure;
+  border: 2px solid black;
+  margin: 3% 0% 1% 0%;
+  padding: 3%;
+  display: grid;
 }
 .conjuntmovs{
-    font-size: 5vw;
-    justify-content: space-around;
-    border-radius: 20px;
-    max-width: 95%;
-    /* margin: auto; */
-    background-color: azure;
-    border: 2px solid black;
-    margin: 3% 2% 3% 2%;
-    padding: 3%;
+  font-size: 5vw;
+  justify-content: space-around;
+  border-radius: 20px;
+  max-width: 97%;
+  /* margin: auto; */
+  background-color: azure;
+  border: 2px solid black;
+  margin: 2% 1% 2% 1%;
+  padding: 3%;
   }
 .stat-bar {
     display: flex;
@@ -165,23 +191,26 @@ h2{
   
   .bar {
     height: 20px;
-    margin-right: 8px;
+    margin-right: 1%;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
   }
   
   .stat-name {
-    width: 100px;
+    width: 30%;
     padding-top: 2%;
+
   }
   
   .stat-value {
-    margin-left: 8px;
+    margin-left: 1%;
   }
   
   /* Adjust color based on stat value */
   .bar {
     background-color: green; /* Default color */
+    border-width: 1px;
+    border: solid;
   }
   
   .bar.red {

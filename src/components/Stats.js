@@ -70,10 +70,15 @@ function Stats(props) {
             />
           </div>
           <div className="abilities_div">
-            <div className='tipusabilities'>Abilities</div>
-            {pokemonActiu?.abilities?.map((ability) => (
-              <div key={ability.ability.name}>{ability.ability.name}</div>
-            ))}
+            <div className="llistahabs">
+              <div className='tipusabilities'>Abilities</div>
+                <div className= 'llistatha'>
+                {pokemonActiu?.abilities?.map((ability) => (
+                  <div key={ability.ability.name}>{ability.ability.name}</div>
+                ))}
+              </div>
+            </div>
+
             <div className="llistastats">
               <div className='tipusstats'>Base stats</div>
                 <div className='conjuntstats'>
@@ -82,6 +87,7 @@ function Stats(props) {
                   ))}
                 </div>
             </div>
+
             <div className="moves_div">
               <div className='tipusmoves'>Moves</div>
                 <div className='conjuntmovs'>
