@@ -48,7 +48,7 @@ h2{
     border-radius: 20px;
     max-width: 95%;
     margin: auto;
-    background-color: azure;
+    background-color: #f82020;
     border: 2px solid black;
     margin: 3% 2% 3% 2%;
     padding: 3%;
@@ -61,7 +61,8 @@ h2{
   border-radius: 20px;
   max-width: 95%;
   margin: auto;
-  background-color: azure;
+  background-color: #A9C9FF;
+  background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);  
   border: 2px solid black;
   margin: 2% 2% 3% 2%;
   padding: 3%;
@@ -85,7 +86,7 @@ h2{
     border-radius: 13px;
     max-width: 85%;
     margin: auto;
-    background-color: azure;
+    background-color: #f82020;
     border: 3px solid black;
     padding: 1%;
     position: absolute;
@@ -118,7 +119,6 @@ h2{
     border: 3px solid black;
     display: block;
     text-align: center;
-    background-color: #f82020;
     margin-top: 1px;
 }
 .tipusstats{
@@ -129,7 +129,7 @@ h2{
     max-width: 65%;
     margin: auto;
     /* background-color: azure; */
-    background-color: #f82020;
+    background-color: azure;
     border: 3px solid black;
     display: block;
     text-align: center;
@@ -145,7 +145,6 @@ h2{
     border: 3px solid black;
     display: block;
     text-align: center;
-    background-color: #f82020;
 }
 .moves_div{
     font-size: 5vw;
@@ -153,7 +152,7 @@ h2{
     border-radius: 20px;
     max-width: 95%;
     margin: auto;
-    background-color: azure;
+    background-color: #f82020;
     border: 3px solid black;
     margin: 3% 2% 3% 2%;
     padding: 3%;
@@ -164,8 +163,8 @@ h2{
   font-size: 4vw;
   border-radius: 20px;
   max-width: 98%;
-  /* margin: auto; */
-  background-color: azure;
+  background-color: #A9C9FF;
+  background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);  
   border: 2px solid black;
   margin: 3% 0% 1% 0%;
   padding: 3%;
@@ -176,8 +175,8 @@ h2{
   justify-content: space-around;
   border-radius: 20px;
   max-width: 97%;
-  /* margin: auto; */
-  background-color: azure;
+  background-color: #A9C9FF;
+  background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);  
   border: 2px solid black;
   margin: 2% 1% 2% 1%;
   padding: 3%;

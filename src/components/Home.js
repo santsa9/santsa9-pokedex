@@ -12,7 +12,7 @@ function Home({setIdPokemon}) {
   // fins a la gen  pkmn 809
   useEffect(() => {
     const getPokemon = async () => {
-        const { result } = await getElements("https://pokeapi.co/api/v2/pokemon?offset=0&limit=809");
+        const { result } = await getElements("https://pokeapi.co/api/v2/pokemon?offset=0&limit=721");
         const pokemonData = await Promise.all(result?.results.map(async (poke) => {
             const ajuda = await getElements(poke.url);
             return ajuda.result;
